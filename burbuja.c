@@ -24,8 +24,9 @@ void main(){
         printf("OPC: 3 - Terminar el programa.\n");
         printf("Que opcion quiere: ");
         scanf("%d",&opc);
-
-        if(opc == 1){
+        switch(opc)
+        {
+        case 1:
             //Ordenar los valores
             for(x=0; x<4; x++){
                 for(y=x+1; y<5; y++){
@@ -41,29 +42,30 @@ void main(){
             for(x=0; x<5; x++){
                 printf("Posicion %d: %d\n",x+1, num[x]);
             }
-        }
-        else if(opc == 2){
-                //Ordenar los valores
-                for(x=0; x<4; x++){
-                    for(y=x+1; y<5; y++){
-                        if(num[x]>num[y]){
-                            burbuja = num[x];
-                            num[x] = num[y];
-                            num[y] = burbuja;
-                        }
+            break;
+        case 2:
+            //Ordenar los valores
+            for(x=0; x<4; x++){
+                for(y=x+1; y<5; y++){
+                    if(num[x]>num[y]){
+                        burbuja = num[x];
+                        num[x] = num[y];
+                        num[y] = burbuja;
                     }
                 }
-                //Mostrar valores
-                printf("Listar valores ordenados\n");
-                for(x=0; x<5; x++){
-                    printf("Posicion %d: %d\n",x+1, num[x]);
-                }
             }
-            else if(opc == 3){
-                    printf("Fin del programa\n");
-                }
-            else{
-                printf("Esta opcion no existe\n");
+            //Mostrar valores
+            printf("Listar valores ordenados\n");
+            for(x=0; x<5; x++){
+                printf("Posicion %d: %d\n",x+1, num[x]);
             }
+            break;
+        case 3:
+            printf("Fin del programa\n");
+            break;
+        default:
+            printf("Esta opcion no existe\n");
+            break;
+        }
     }while(opc!=3);
 }
