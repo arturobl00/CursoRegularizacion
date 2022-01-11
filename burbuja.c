@@ -3,8 +3,8 @@ int num[5];
 int x,y,burbuja;
 int opc;
 void main(){
-    printf("Programa 1 - Metodo de la Burbuja\n");
-    printf("Este programa solicita 5 numeros y los ordena de Mayor a Menor o de Menor a Mayor.\n");
+    
+    saludo();
     
     for(x=0; x<5; x++){
         printf("De el numero %d: ",x+1);
@@ -18,11 +18,7 @@ void main(){
     }
 
     do{
-        printf("Menu de Opciones\n");
-        printf("OPC: 1 - Ordenar de Mayor a Menor.\n");
-        printf("OPC: 2 - Ordenar de Menor a Mayor.\n");
-        printf("OPC: 3 - Terminar el programa.\n");
-        printf("Que opcion quiere: ");
+        menu();
         scanf("%d",&opc);
         switch(opc)
         {
@@ -68,4 +64,17 @@ void main(){
             break;
         }
     }while(opc!=3);
+}
+
+void saludo(){
+    printf("Programa 1 - Metodo de la Burbuja\n");
+    printf("Este programa solicita 5 numeros y los ordena de Mayor a Menor o de Menor a Mayor.\n");
+}
+
+void menu(){
+    printf("Menu de Opciones\n");
+    printf("OPC: 1 - Ordenar de Mayor a Menor.\n");
+    printf("OPC: 2 - Ordenar de Menor a Mayor.\n");
+    printf("OPC: 3 - Terminar el programa.\n");
+    printf("Que opcion quiere: ");
 }
